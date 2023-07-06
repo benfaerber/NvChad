@@ -64,4 +64,23 @@ require("lspconfig").lua_ls.setup {
   },
 }
 
+require('lspconfig').ocamllsp.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  settings = {
+    ocamllsp = {
+      diagnostics = {
+        disabled_warnings = {
+          "33",
+        },
+      }
+    },
+    workspace = {
+      library = {
+        [vim.fn.expand("$VIMRUNTIME/stdlib")] = true,
+      },
+    },
+  }
+}
+
 return M

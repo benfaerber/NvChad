@@ -19,3 +19,14 @@ end
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
+
+-- OCaml LSP Server
+local lspconfig = require('lspconfig')
+lspconfig.ocamllsp.setup {
+   cmd = { 'ocamllsp' },
+   filetypes = { 'ocaml', 'reason' },
+   root_dir = lspconfig.util.root_pattern('.opam*', 'package.json', 'esy.json'),
+}
+
+local merlin_path = vim.fn.expand('~/.opam/default/bin/ocamlmerlin')
+vim.cmd(string.format('let g:ocaml_merlin_bin = "%s"', merlin_path))
