@@ -71,7 +71,7 @@ require('lspconfig').ocamllsp.setup {
     ocamllsp = {
       diagnostics = {
         disabled_warnings = {
-          "33",
+          "33", "34"
         },
       }
     },
