@@ -83,4 +83,12 @@ require('lspconfig').ocamllsp.setup {
   }
 }
 
+require('lspconfig').rust_analyzer.setup({
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  settings = {
+    ['rust-analyzer'] = {}
+  },
+})
+
 return M

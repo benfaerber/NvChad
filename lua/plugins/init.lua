@@ -267,6 +267,10 @@ local default_plugins = {
       require("which-key").setup(opts)
     end,
   },
+  {
+    "cpea2506/one_monokai.nvim",
+  }
+
 }
 
 local config = require("core.utils").load_config()
